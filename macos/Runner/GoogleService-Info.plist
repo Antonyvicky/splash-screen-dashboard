@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAnOuloK83vLavEDRAQ6gJJmvTZk0hBzO0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>401716840671</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.carmodel.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>cockpit-intelligence</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cockpit-intelligence.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:401716840671:ios:b53eeb01b1664cc72f416a</string>
+	<key>DATABASE_URL</key>
+	<string>https://cockpit-intelligence-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
