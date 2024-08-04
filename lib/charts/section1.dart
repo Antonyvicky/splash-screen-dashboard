@@ -99,14 +99,14 @@ class _bracState extends State<brac> {
                 LineChartBarData(
                   spots: _getSpots(0),
                   isCurved: true,
-                  colors: [Colors.red],
+                  color: Colors.red,
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),
                 LineChartBarData(
                   spots: _getSpots(1),
                   isCurved: true,
-                  colors: [Colors.blue],
+                  color: Colors.blue,
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),

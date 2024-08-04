@@ -5,7 +5,8 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 // ignore: camel_case_types
 class brake extends StatefulWidget {
-  const brake({Key? key, this.acc = const ["LOW", "MEDIUM", "HIGH"]}) : super(key: key);
+  const brake({Key? key, this.acc = const ["LOW", "MEDIUM", "HIGH"]})
+      : super(key: key);
 
   final List<String> acc;
 
@@ -18,6 +19,7 @@ class _brstate extends State<brake> {
   final DatabaseReference _accReference = FirebaseDatabase.instance
       // ignore: deprecated_member_use
       .reference()
+      .child('rpi_sensors')
       .child('rpi_sensors')
       .child('brake');
   late int brvalue;
@@ -61,23 +63,32 @@ class _brstate extends State<brake> {
 
   @override
   Widget build(BuildContext context) {
-
     final screenWidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      width: screenWidth*0.15, // Increased width to accommodate the power icon
+      width:
+          screenWidth * 0.15, // Increased width to accommodate the power icon
       child: Padding(
-        padding: EdgeInsets.only(top: screenWidth*0.01 ,right: screenWidth*0.014),
+        padding: EdgeInsets.only(
+            top: screenWidth * 0.01, right: screenWidth * 0.014),
         child: DefaultTextStyle(
-          style:TextStyle(
-          ),
+          style: TextStyle(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Text("Brake   ",style: TextStyle(color: primaryColor,fontWeight: FontWeight.w600, fontSize: 1.6.w),),
-              Text(widget.acc[brvalue], style: TextStyle(color: brakeColor,fontSize: 1.2.w),)
+              Text(
+                "Brake   ",
+                style: TextStyle(
+                    color: primaryColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 1.6.w),
+              ),
+              Text(
+                widget.acc[brvalue],
+                style: TextStyle(color: brakeColor, fontSize: 1.2.w),
+              )
             ],
           ),
         ),

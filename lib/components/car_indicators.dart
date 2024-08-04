@@ -11,8 +11,8 @@ abstract class CarIndicators extends StatefulWidget {
   // ignore: library_private_types_in_public_api
   _CarIndicatorsState createState() => _CarIndicatorsState();
 
-  List<Widget> buildContent(BuildContext context, bool blinkRightIndicator, bool blinkLeftIndicator,
-      bool headlightindicator);
+  List<Widget> buildContent(BuildContext context, bool blinkRightIndicator,
+      bool blinkLeftIndicator, bool headlightindicator);
 }
 
 class _CarIndicatorsState extends State<CarIndicators> {
@@ -21,6 +21,7 @@ class _CarIndicatorsState extends State<CarIndicators> {
       // ignore: deprecated_member_use
       .reference()
       .child('rpi_sensors')
+      .child('rpi_sensors')
       .child('right_in');
   final DatabaseReference _indi2Reference =
       // ignore: deprecated_member_use
@@ -28,12 +29,14 @@ class _CarIndicatorsState extends State<CarIndicators> {
           // ignore: deprecated_member_use
           .reference()
           .child('rpi_sensors')
+          .child('rpi_sensors')
           .child('left_in');
   final DatabaseReference _indi3Reference =
       // ignore: deprecated_member_use
       FirebaseDatabase.instance
           // ignore: deprecated_member_use
           .reference()
+          .child('rpi_sensors')
           .child('rpi_sensors')
           .child('headlight');
 
@@ -77,11 +80,10 @@ class _CarIndicatorsState extends State<CarIndicators> {
 
   @override
   Widget build(BuildContext context) {
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: widget.buildContent(
-          context, _blinkRightIndicator, _blinkLeftIndicator, _headlightindicator),
+      children: widget.buildContent(context, _blinkRightIndicator,
+          _blinkLeftIndicator, _headlightindicator),
     );
   }
 }
@@ -90,28 +92,27 @@ class SpecificCarIndicators extends CarIndicators {
   const SpecificCarIndicators({Key? key}) : super(key: key);
 
   @override
-  List<Widget> buildContent(BuildContext context, bool blinkRightIndicator, bool blinkLeftIndicator,
-      bool headlightindicator) {
-
+  List<Widget> buildContent(BuildContext context, bool blinkRightIndicator,
+      bool blinkLeftIndicator, bool headlightindicator) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return [
       Image.asset(
         "assets/left_indicator.png",
-        height: screenHeight*0.06,
-        width: screenWidth*0.06,
+        height: screenHeight * 0.06,
+        width: screenWidth * 0.06,
         color: (blinkLeftIndicator) ? indicatorTrueColor : indicatorColor,
       ),
       Image.asset(
         "assets/head_light.png",
-        height: screenHeight*0.07,
-        width: screenWidth*0.07,
+        height: screenHeight * 0.07,
+        width: screenWidth * 0.07,
         color: (headlightindicator) ? headlightColor : indicatorColor,
       ),
       Image.asset(
         "assets/right_indicator.png",
-        height: screenHeight*0.06,
-        width: screenWidth*0.06,
+        height: screenHeight * 0.06,
+        width: screenWidth * 0.06,
         color: (blinkRightIndicator) ? indicatorTrueColor : indicatorColor,
       ),
     ];

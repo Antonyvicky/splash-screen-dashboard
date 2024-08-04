@@ -65,7 +65,7 @@ class _SteerState extends State<Steer> {
                 LineChartBarData(
                   spots: _getSpots(1), // Use 0 as the column index for 'Brake'
                   isCurved: true,
-                  colors: [Colors.blue],
+                  color: Colors.blue,
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),
@@ -73,9 +73,8 @@ class _SteerState extends State<Steer> {
                   spots: _getSpots(
                       17), // Use 18 as the column index for 'Steering Position'
                   isCurved: true,
-                  colors: [
-                    Colors.red
-                  ], // You can use a different color for the second line
+                  color: Colors
+                      .red, // You can use a different color for the second line
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),

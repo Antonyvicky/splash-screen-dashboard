@@ -32,7 +32,11 @@ class _GearAndBatteryState extends State<GearAndBattery> {
 
   final DatabaseReference _brkReference =
       // ignore: deprecated_member_use
-      FirebaseDatabase.instance.reference().child('rpi_sensors').child('brake');
+      FirebaseDatabase.instance
+          .reference()
+          .child('rpi_sensors')
+          .child('rpi_sensors')
+          .child('brake');
   late int coolant;
   late int engine1;
   late int br;
@@ -69,7 +73,6 @@ class _GearAndBatteryState extends State<GearAndBattery> {
 
   @override
   Widget build(BuildContext context) {
-
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.height;
 
@@ -94,20 +97,19 @@ class _GearAndBatteryState extends State<GearAndBattery> {
                       children: [
                         const Gears(),
                         Padding(
-                          padding: EdgeInsets.only(top: screenHeight*0.055),
+                          padding: EdgeInsets.only(top: screenHeight * 0.055),
                           child: SizedBox(
                             width: gearConstraints.maxWidth * 0.72,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                SizedBox(width: screenWidth*0.01),
+                                SizedBox(width: screenWidth * 0.01),
                                 Text(
                                   "ENGINE TEMPERATURE: ${engine1.toStringAsFixed(1)}° C",
                                   style: TextStyle(
-                                    fontSize: 1.1.w,
-                                    fontWeight: FontWeight.w400,
-                                    color: temperatureColor
-                                  ),
+                                      fontSize: 1.1.w,
+                                      fontWeight: FontWeight.w400,
+                                      color: temperatureColor),
                                 ),
                                 Spacer(),
                                 Padding(
@@ -181,7 +183,7 @@ class AvgWattPerKmPrinter extends CustomPainter {
     Path path = Path()
       ..moveTo(0, size.height)
       ..lineTo(size.width * 0.35, 0)
-      ..lineTo(size.width , 0)
+      ..lineTo(size.width, 0)
       ..lineTo(size.width * 0.35, strokeWidth);
 
     path.close();
@@ -203,7 +205,7 @@ class OdoPrinter extends CustomPainter {
     double strokeWidth = 0.6.h;
     Path path = Path()
       ..lineTo(size.width * 0.65, 0)
-      ..lineTo(size.width , size.height)
+      ..lineTo(size.width, size.height)
       ..lineTo(size.width * 0.65, strokeWidth);
     // ..lineTo(size.width, 0);
 

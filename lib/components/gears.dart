@@ -24,6 +24,7 @@ class _GearsState extends State<Gears> {
           // ignore: deprecated_member_use
           .reference()
           .child('rpi_sensors')
+          .child('rpi_sensors')
           .child('gear');
 
   @override
@@ -67,11 +68,10 @@ class _GearsState extends State<Gears> {
 
   @override
   Widget build(BuildContext context) {
-
     final screenWidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      width: screenWidth*0.12,
+      width: screenWidth * 0.12,
       child: Padding(
         padding: const EdgeInsets.only(top: 0),
         child: DefaultTextStyle(
@@ -85,11 +85,10 @@ class _GearsState extends State<Gears> {
               (index) => Text(
                 widget.gears[index],
                 style: TextStyle(
-                  color: index == selectedGearIndex
-                      ? primaryColor
-                      : indicatorColor,
-                  fontSize: 2.0.w
-                ),
+                    color: index == selectedGearIndex
+                        ? primaryColor
+                        : indicatorColor,
+                    fontSize: 2.0.w),
               ),
             ),
           ),

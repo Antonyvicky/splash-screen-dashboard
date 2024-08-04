@@ -18,6 +18,7 @@ class _accstate extends State<acceleration> {
   final DatabaseReference _accReference = FirebaseDatabase.instance
       .reference()
       .child('rpi_sensors')
+      .child('rpi_sensors')
       .child('acceleration');
   late int accvalue;
   Color accColor = lightRed;
@@ -48,10 +49,10 @@ class _accstate extends State<acceleration> {
         accColor = lightRed;
         return widget.acc.indexOf("LOW");
       case 1:
-      accColor = lightYellow;
+        accColor = lightYellow;
         return widget.acc.indexOf("MEDIUM");
       case 2:
-      accColor = lightGreen;
+        accColor = lightGreen;
         return widget.acc.indexOf("HIGH");
       default:
         return 0;
@@ -60,23 +61,32 @@ class _accstate extends State<acceleration> {
 
   @override
   Widget build(BuildContext context) {
-
     final screenWidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      width: screenWidth*0.15, // Increased width to accommodate the power icon
+      width:
+          screenWidth * 0.15, // Increased width to accommodate the power icon
       child: Padding(
-        padding: EdgeInsets.only(top: screenWidth*0.01,left: screenWidth*0.014),
+        padding:
+            EdgeInsets.only(top: screenWidth * 0.01, left: screenWidth * 0.014),
         child: DefaultTextStyle(
-          style: TextStyle(
-          ),
+          style: TextStyle(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Text("Accn   ",style: TextStyle(color: primaryColor,fontWeight: FontWeight.w600, fontSize: 1.6.w),),
-              Text(widget.acc[accvalue],style: TextStyle(color: accColor,fontSize: 1.2.w),)
+              Text(
+                "Accn   ",
+                style: TextStyle(
+                    color: primaryColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 1.6.w),
+              ),
+              Text(
+                widget.acc[accvalue],
+                style: TextStyle(color: accColor, fontSize: 1.2.w),
+              )
             ],
           ),
         ),

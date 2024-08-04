@@ -79,7 +79,7 @@ class _LineChartWidgetState extends State<LineChartWidget> {
                 LineChartBarData(
                   spots: _getSpots(),
                   isCurved: true,
-                  colors: [Colors.blue],
+                  color: Colors.blue,
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),

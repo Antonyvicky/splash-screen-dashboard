@@ -93,7 +93,7 @@ class _CornerState extends State<corner> {
                 LineChartBarData(
                   spots: _getSpots(1), // Use 0 as the column index for 'Brake'
                   isCurved: true,
-                  colors: [Colors.blue],
+                  color: Colors.blue,
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),
@@ -101,7 +101,7 @@ class _CornerState extends State<corner> {
                   spots:
                       _getSpots(7), // Use 7 as the column index for 'Comering'
                   isCurved: true,
-                  colors: [Colors.red],
+                  color: Colors.red,
                   dotData: FlDotData(show: false),
                   belowBarData: BarAreaData(show: true),
                 ),

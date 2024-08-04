@@ -28,17 +28,20 @@ class _DashboardState extends State<Dashboard>
       // ignore: deprecated_member_use
       .reference()
       .child('rpi_sensors')
+      .child('rpi_sensors')
       .child('seatbelt');
   final DatabaseReference _indi5Reference = FirebaseDatabase.instance
 
       // ignore: deprecated_member_use
       .reference()
       .child('rpi_sensors')
+      .child('rpi_sensors')
       .child('ear');
   final DatabaseReference _indi6Reference = FirebaseDatabase.instance
 
       // ignore: deprecated_member_use
       .reference()
+      .child('rpi_sensors')
       .child('rpi_sensors')
       .child('steering');
   final DatabaseReference _batteryReference = FirebaseDatabase.instance
@@ -51,17 +54,20 @@ class _DashboardState extends State<Dashboard>
       // ignore: deprecated_member_use
       .reference()
       .child('rpi_sensors')
+      .child('rpi_sensors')
       .child('cornering');
   final DatabaseReference _hornReference = FirebaseDatabase.instance
 
       // ignore: deprecated_member_use
       .reference()
       .child('rpi_sensors')
+      .child('rpi_sensors')
       .child('horn');
   final DatabaseReference _suddenReference = FirebaseDatabase.instance
 
       // ignore: deprecated_member_use
       .reference()
+      .child('rpi_sensors')
       .child('rpi_sensors')
       .child('sudden break');
 
